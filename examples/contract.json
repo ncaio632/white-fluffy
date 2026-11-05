@@ -1,0 +1,8 @@
+{
+  "connector_family": "example-connector",
+  "operation": "inspect",
+  "mode": "read",
+  "asset_ref": "example-asset",
+  "authentication": "unknown",
+  "capability_checked": false
+}
