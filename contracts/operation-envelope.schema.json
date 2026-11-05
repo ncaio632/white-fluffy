@@ -1,0 +1,293 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "synthetic": {
+      "const": true
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "connectorRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "sessionRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "family": {
+          "enum": [
+            "advertising",
+            "developer",
+            "messaging"
+          ]
+        },
+        "assetRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "operation": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "tool": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "mode": {
+          "enum": [
+            "read",
+            "write"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        },
+        "payloadDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "requestRef",
+        "connectorRef",
+        "sessionRef",
+        "family",
+        "assetRef",
+        "operation",
+        "tool",
+        "mode",
+        "payload",
+        "payloadDigest",
+        "purpose",
+        "deadline"
+      ]
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "connectorRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "sessionRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "family": {
+          "enum": [
+            "advertising",
+            "developer",
+            "messaging"
+          ]
+        },
+        "tool": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "descriptorDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "connectorRef",
+        "sessionRef",
+        "family",
+        "tool",
+        "descriptorDigest",
+        "observedAt",
+        "complete",
+        "available"
+      ]
+    },
+    "authentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sessionRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "principalRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "credentialRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "status": {
+          "enum": [
+            "authenticated",
+            "unauthenticated",
+            "unknown"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "sessionRef",
+        "principalRef",
+        "credentialRef",
+        "status",
+        "observedAt"
+      ]
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "principalRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "family": {
+          "enum": [
+            "advertising",
+            "developer",
+            "messaging"
+          ]
+        },
+        "assetRef": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "operation": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+        },
+        "status": {
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "principalRef",
+        "family",
+        "assetRef",
+        "operation",
+        "status",
+        "observedAt"
+      ]
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "approvalRef": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+            },
+            "approverRef": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+            },
+            "assetRef": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+            },
+            "operation": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+            },
+            "payloadDigest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "purpose": {
+              "type": "string",
+              "minLength": 1
+            },
+            "explicit": {
+              "const": true
+            },
+            "expiresAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "consumed": {
+              "type": "boolean"
+            },
+            "actionDigest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "principalRef": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+            }
+          },
+          "required": [
+            "approvalRef",
+            "approverRef",
+            "assetRef",
+            "operation",
+            "payloadDigest",
+            "purpose",
+            "explicit",
+            "expiresAt",
+            "consumed",
+            "actionDigest",
+            "principalRef"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "synthetic",
+    "request",
+    "inventory",
+    "authentication",
+    "grant",
+    "approval"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/white-fluffy/operation-envelope.schema.json",
+  "title": "Synthetic operation envelope v1"
+}

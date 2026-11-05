@@ -1,0 +1,38 @@
+[
+  {
+    "schema": "contracts/operation-envelope.schema.json",
+    "instance": "examples/engineering/valid-read.json",
+    "valid": true,
+    "purpose": "Structural read example; evaluator still checks evidence."
+  },
+  {
+    "schema": "contracts/operation-envelope.schema.json",
+    "instance": "examples/engineering/valid-write.json",
+    "valid": true,
+    "purpose": "Structural write example; approval authority remains unproven."
+  },
+  {
+    "schema": "contracts/operation-envelope.schema.json",
+    "instance": "examples/engineering/invalid-missing-asset.json",
+    "valid": false,
+    "purpose": "Missing required asset; SCHEMA_INVALID."
+  },
+  {
+    "schema": "contracts/operation-envelope.schema.json",
+    "instance": "examples/engineering/invalid-approval-binding.json",
+    "valid": true,
+    "purpose": "Semantic negative: APPROVAL_MISMATCH, no dispatch."
+  },
+  {
+    "schema": "contracts/operation-envelope.schema.json",
+    "instance": "examples/engineering/invalid-asset-denied.json",
+    "valid": true,
+    "purpose": "Semantic negative: ASSET_DENIED, no dispatch."
+  },
+  {
+    "schema": "contracts/decision-receipt.schema.json",
+    "instance": "examples/engineering/valid-receipt.json",
+    "valid": true,
+    "purpose": "Indeterminate outcome shape; not live evidence."
+  }
+]

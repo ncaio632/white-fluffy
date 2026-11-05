@@ -1,30 +1,23 @@
-![white-fluffy](assets/header.svg)
-
 # white-fluffy
 
-### MCP integration boundaries and diagnostics
+Clear boundaries for connected tools.
 
-[English](README.md) · [Português (Brasil)](README.pt-BR.md) · [日本語](README.ja.md)
+[English](README.md) · [Português](README.pt-BR.md) · [日本語](README.ja.md)
 
+An integration specification separating capability discovery, authentication, asset authorization and controlled operations.
 
-A technical reference structure for separating connector capability, authentication, asset scope and business operations.
+## Start here
+
+[Implementation handbook](engineering/index.en.md)
+
+## Documentation
+
+- [Architecture and invariants](docs/architecture.en.md)
+- [Contracts and synthetic examples](docs/contracts.en.md)
+- [Decisions and trade-offs](docs/decisions.en.md)
+- [Validation criteria](docs/validation.en.md)
+- [Agent instructions](AGENTS.md) · [Role briefs](agents/)
 
 ## Scope
 
-Integration reference, not an MCP server implementation. No account tokens, business asset identifiers or screenshots are published. Live capabilities require fresh inspection.
-
-## Engineering notes
-
-- [Architecture and invariants](docs/architecture.en.md)
-- [Data contracts](docs/contracts.en.md)
-- [Design decision record](docs/decisions.en.md)
-- [Validation strategy](docs/validation.en.md)
-- [Synthetic contract example](examples/contract.json)
-
-## Reading guide
-
-Start with architecture, inspect the contract example, then read the decision trade-off and validation matrix. Validation scenarios document what must be checked; they are not a claim that a public executable implementation passed those checks.
-
-## Publication boundary
-
-This technical edition excludes private records, account exports, workstation paths, conversation logs and historical backup blobs. The original operational archive remains a separate private asset.
+Engineering documentation and synthetic reference artifacts. Proposed behavior, implementation tasks and observed evidence are identified separately. Agent briefs are invoked deliberately; synchronization does not call AI models.

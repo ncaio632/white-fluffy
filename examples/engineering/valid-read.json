@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "request": {
+    "requestRef": "request.synthetic.one",
+    "connectorRef": "connector.synthetic",
+    "sessionRef": "session.synthetic.one",
+    "family": "developer",
+    "assetRef": "asset.synthetic.alpha",
+    "operation": "operation.inspect",
+    "tool": "tool.synthetic.inspect",
+    "mode": "read",
+    "payload": {
+      "limit": 1
+    },
+    "payloadDigest": "156fedef9af97685d0e6f43eebe55d8ae67fcbf34b2fea23c2b1af061b4bcdf0",
+    "purpose": "Inspect synthetic asset state",
+    "deadline": "2030-01-01T00:04:00Z"
+  },
+  "inventory": {
+    "connectorRef": "connector.synthetic",
+    "sessionRef": "session.synthetic.one",
+    "family": "developer",
+    "tool": "tool.synthetic.inspect",
+    "descriptorDigest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "observedAt": "2030-01-01T00:00:00Z",
+    "complete": true,
+    "available": true
+  },
+  "authentication": {
+    "sessionRef": "session.synthetic.one",
+    "principalRef": "principal.synthetic.actor",
+    "credentialRef": "credential.synthetic.reference",
+    "status": "authenticated",
+    "observedAt": "2030-01-01T00:00:00Z"
+  },
+  "grant": {
+    "principalRef": "principal.synthetic.actor",
+    "family": "developer",
+    "assetRef": "asset.synthetic.alpha",
+    "operation": "operation.inspect",
+    "status": "allowed",
+    "observedAt": "2030-01-01T00:00:00Z"
+  },
+  "approval": null
+}

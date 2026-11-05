@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "requestRef": "request.synthetic.one",
+  "requestDigest": "2222222222222222222222222222222222222222222222222222222222222222",
+  "state": "INDETERMINATE",
+  "error": "DISPATCH_UNKNOWN",
+  "dispatchCount": 1,
+  "recordedAt": "2030-01-01T00:02:00Z",
+  "policyRevision": "policy.synthetic.v1"
+}

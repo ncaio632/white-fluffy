@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "synthetic": {
+      "const": true
+    },
+    "requestRef": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+    },
+    "requestDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "state": {
+      "enum": [
+        "BLOCKED",
+        "SUCCEEDED",
+        "FAILED",
+        "INDETERMINATE",
+        "RECONCILED"
+      ]
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "enum": [
+            "SCHEMA_INVALID",
+            "INVENTORY_UNKNOWN",
+            "TOOL_UNAVAILABLE",
+            "EVIDENCE_STALE",
+            "AUTH_REQUIRED",
+            "AUTH_UNKNOWN",
+            "ASSET_DENIED",
+            "GRANT_UNKNOWN",
+            "APPROVAL_REQUIRED",
+            "APPROVAL_MISMATCH",
+            "APPROVAL_EXPIRED",
+            "APPROVAL_REUSED",
+            "EFFECT_UNKNOWN",
+            "DISPATCH_UNKNOWN",
+            "AUDIT_UNAVAILABLE",
+            "DEADLINE_EXCEEDED",
+            "RESULT_TOO_LARGE",
+            "TRANSPORT_FAILED"
+          ]
+        }
+      ]
+    },
+    "dispatchCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "policyRevision": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9._-]{2,95}$"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "synthetic",
+    "requestRef",
+    "requestDigest",
+    "state",
+    "error",
+    "dispatchCount",
+    "recordedAt",
+    "policyRevision"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/white-fluffy/decision-receipt.schema.json",
+  "title": "Synthetic decision receipt v1"
+}
